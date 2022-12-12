@@ -1,8 +1,7 @@
 ---
-id: c3263ad5-c971-41e2-bc8e-2f5291c2e8ab
+id: 95a63ba4-e0d5-4af8-99d1-eddf9b23215d
 blueprint: eine_neue_collection
-title: 'New Entry'
+title: Tausend!
 updated_by: f5fe1958-774a-4886-a03e-0b74ece8600a
-updated_at: 1670883900
+updated_at: 1670884046
 ---
-Asd
