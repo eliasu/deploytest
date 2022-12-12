@@ -47,4 +47,9 @@ jobs:
         port: ${{ secrets.PORT_AI }}
         script: |
           cd ${{ secrets.PATH_AI }}
-          ls
+          php please cache:clear
+          php please config:cache
+          php please route:cache
+          php please stache:warm
+          php please queue:restart
+          php please search:update --all
