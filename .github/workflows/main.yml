@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  Deploy-AllInkl:
 
     runs-on: ubuntu-latest
 
@@ -23,7 +23,7 @@ jobs:
           TARGET: ${{ secrets.PATH_AI }}
           EXCLUDE: "/node_modules/, /public/img/, /vendor/"
     
-    - name: 🔨 deploy script
+    - name: 🔨 Execute Deploy Script
       uses: appleboy/ssh-action@v0.1.6
       with:
         host: ${{ secrets.HOST_AI }}
@@ -31,7 +31,10 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT_AI }}
         script: |
+          set -e
+          echo "Deployment started ..."
           cd ${{ secrets.PATH_AI }}
+          (php artisan down) || true
           composer install
           npm install
           npm run build
@@ -41,3 +44,5 @@ jobs:
           php please stache:warm
           php please queue:restart
           php please search:update --all
+          php artisan up
+          echo "Deployment finished!"
