@@ -36,4 +36,14 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_AI }}
           REMOTE_USER: ${{ secrets.NAME_AI }}
           TARGET: ${{ secrets.PATH_AI }}
-          EXCLUDE: "/node_modules/, /public/img/, /storage/, /public/static/, /public/storage/"
+          EXCLUDE: "/node_modules/, /public/img/, /vendor/"
+    
+    - name: 🔨 deploy script
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.HOST_AI }}
+        username: ${{ secrets.NAME_AI }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: ${{ secrets.PORT_AI }}
+        script: |
+          ls
