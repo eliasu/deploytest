@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: f5fe1958-774a-4886-a03e-0b74ece8600a
-updated_at: 1670872418
+updated_at: 1670872722
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -18,7 +18,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Lokal gepusht! Und neue Headline! !'
+            text: 'Edndgültiger Test!'
     type: article
     enabled: true
 ---
