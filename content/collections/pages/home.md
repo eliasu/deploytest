@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: f5fe1958-774a-4886-a03e-0b74ece8600a
-updated_at: 1670871691
+updated_at: 1670872142
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -18,13 +18,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Lokal angepasst!'
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 'Nochmal hier!"'
+            text: 'Lokal gepusht!'
     type: article
     enabled: true
 ---
