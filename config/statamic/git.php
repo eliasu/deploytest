@@ -87,6 +87,8 @@ return [
         public_path('assets'),
         public_path('favicons'),
         public_path('social_images'),
+        base_path('composer.json'),
+        base_path('composer.lock'),
     ],
 
     /*
