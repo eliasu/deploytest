@@ -46,4 +46,5 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT_AI }}
         script: |
+          cd ${{ secrets.PATH_AI }}
           ls
