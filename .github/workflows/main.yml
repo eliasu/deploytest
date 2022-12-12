@@ -31,7 +31,6 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT_AI }}
         script: |
-          set -e
           echo "Deployment started ..."
           cd ${{ secrets.PATH_AI }}
           (php artisan down) || true
