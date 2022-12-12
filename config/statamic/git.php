@@ -87,8 +87,6 @@ return [
         public_path('assets'),
         public_path('favicons'),
         public_path('social_images'),
-        base_path('composer.json'),
-        base_path('composer.lock'),
     ],
 
     /*
@@ -104,6 +102,8 @@ return [
 
     'commands' => [
         'git remote set-url origin git@github.com:eliasu/deploytest.git',
+        'git add composer.json',
+        'git add composer.lock',
         'git add {{ paths }}',
         'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }} [skip actions]"',
     ],
