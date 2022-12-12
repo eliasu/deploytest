@@ -1,6 +1,0 @@
-title: 'Eine neue Collection'
-template: eine_neue_collection/show
-revisions: false
-date_behavior:
-  past: public
-  future: private
