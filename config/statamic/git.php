@@ -101,6 +101,7 @@ return [
     */
 
     'commands' => [
+        'git remote set-url origin git@github.com:eliasu/deploytest.git',
         'git add {{ paths }}',
         'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }} [skip actions]"',
     ],
