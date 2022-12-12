@@ -47,6 +47,7 @@ jobs:
         port: ${{ secrets.PORT_AI }}
         script: |
           cd ${{ secrets.PATH_AI }}
+          composer install
           php please cache:clear
           php please config:cache
           php please route:cache
