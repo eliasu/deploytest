@@ -101,7 +101,6 @@ return [
     */
 
     'commands' => [
-        'git remote set-url origin git@github.com:eliasu/deploytest.git',
         'git add composer.json',
         'git add composer.lock',
         'git add {{ paths }}',
