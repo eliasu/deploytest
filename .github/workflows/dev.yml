@@ -1,0 +1,62 @@
+name: 🚀 Dev Deploy Website to All-Inkl
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  Deploy-AllInkl:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🚚 Get Latest Code
+      uses: actions/checkout@v3
+
+    - name: 📦 Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    
+    - name: 📦 Install Packages
+      run: npm install
+    
+    - name: 🔨 Build
+      run: |
+        npm run build
+    
+    - name: 📦 Install Composer dependencies
+      uses: php-actions/composer@v6
+
+    - name: 📂 Deploy to Server
+      uses: easingthemes/ssh-deploy@main
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_AI }}
+          REMOTE_USER: ${{ secrets.NAME_AI }}
+          TARGET: ${{ secrets.PATH_DEV_AI }}
+          EXCLUDE: "/node_modules/, /public/img/, /vendor/"
+    
+    - name: 🔨 Execute Deploy Script
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.HOST_AI }}
+        username: ${{ secrets.NAME_AI }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: ${{ secrets.PORT_AI }}
+        script: |
+          echo "Dev Deployment started ..."
+          cd ${{ secrets.PATH_DEV_AI }}
+          (php artisan down) || true
+          composer install
+          npm install
+          npm run build
+          php please cache:clear
+          php please config:cache
+          php please route:cache
+          php please stache:warm
+          php please queue:restart
+          php please search:update --all
+          php artisan up
+          echo "Dev Deployment finished!"
