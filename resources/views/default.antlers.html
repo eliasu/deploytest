@@ -5,11 +5,12 @@
 
 <!-- /default.antlers.html -->
 <main class="bg-red-300 outer-grid" id="content">
-    <div class="bg-green-500">Grün</div>
-    <div class="bg-yellow-600">Ein Zwei drei</div>
-    <div class="bg-red-800">Rot</div>
-    {{ page_builder scope="block" }}
-        {{ partial src="page_builder/{type}" }}
-    {{ /page_builder }}
+    <div class="w-screen h-screen text-center bg-green-500">
+        <h1>Now we are Rocking</h1>
+    </div>
+    
+    {{# {{ page_builder scope="block" }} #}}
+        {{# {{ partial src="page_builder/{type}" }} #}}
+    {{# {{ /page_builder }} #}}
 </main>
 <!-- End: /default.antlers.html -->
