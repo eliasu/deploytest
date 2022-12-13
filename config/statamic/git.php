@@ -87,6 +87,7 @@ return [
         public_path('assets'),
         public_path('favicons'),
         public_path('social_images'),
+        public_path('images'),
     ],
 
     /*
