@@ -2,5 +2,5 @@
 set -e
 
 echo "Git Push started ..."
-git Push
+git push
 echo "Git Push completed!"
