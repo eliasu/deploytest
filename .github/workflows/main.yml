@@ -59,5 +59,4 @@ jobs:
           php please queue:restart
           php please search:update --all
           php artisan up
-          git remote set-url origin git@github.com:eliasu/deploytest.git
           echo "Deployment finished!"
