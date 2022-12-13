@@ -105,8 +105,7 @@ return [
         'git add composer.json',
         'git add composer.lock',
         'git add {{ paths }}',
-        'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }} [skip actions]"',
-        'git push',
+        'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }} [BOT] [skip actions]"',
     ],
 
     /*
@@ -120,7 +119,7 @@ return [
     |
     */
 
-    'push' => env('STATAMIC_GIT_PUSH', false),
+    'push' => env('STATAMIC_GIT_PUSH', true),
 
     /*
     |--------------------------------------------------------------------------
