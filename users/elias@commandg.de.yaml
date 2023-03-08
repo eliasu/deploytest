@@ -6,3 +6,5 @@ preferences:
   collections:
     test_collection:
       after_save: continue_editing
+    eine_neue_collection:
+      per_page: 500
